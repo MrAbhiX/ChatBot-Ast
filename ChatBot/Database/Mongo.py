@@ -1,6 +1,6 @@
 from ChatBot import MONGO_URL, USERBOT_USERNAME
 from motor.motor_asyncio import AsyncIOMotorClient
-
+import motor.motor_asyncio
 
 class Database:
     def __init__(self, uri, database_name):
