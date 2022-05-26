@@ -19,7 +19,8 @@ abhi = Client("ChatBOt Assistant", SESSION_NAME, API_ID, API_HASH)
 
 SUDOERS = filters.user()
 
-lakshu = abhi.get_me()
+with abhi as app:
+    lakshu = app.get_me()
 
 USERBOT_ID = lakshu.id
 USERBOT_NAME = lakshu.first_name + (lakshu.last_name or "")
