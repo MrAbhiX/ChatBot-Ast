@@ -20,7 +20,8 @@ from ChatBot.Database import (db,
                               check_chatbot, 
                               add_chatbot, 
                               rm_chatbot,
-                              chatbot_group)
+                              chatbot_group,
+                              chatbotdb)
 
 from ChatBot.Helpers import (capture_error,
                              chat_bot_toggle,
