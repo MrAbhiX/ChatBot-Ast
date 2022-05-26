@@ -46,7 +46,7 @@ async def chatbot_talk_ubot(_, message: Message):
     filters.text & filters.private & ~filters.me & ~filters.edited,
     group=(chatbot_group + 1),
 )
-@capture_err
+@capture_error
 async def chatbot_talk_ubot_pm(_, message: Message):
     db = await check_chatbot()
     if message.chat.id not in db["userbot"]:
