@@ -15,12 +15,7 @@ MONGO_URL = environ.get("MONGO_URL", None)
 ARQ_API_URL = environ.get("ARQ_API_URL", None)
 ARQ_API_KEY = environ.get("ARQ_API_KEY", None)
 
-abhi = Client("ChatBot Assistant",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    SESSION_NAME
-    
-    )
+abhi = Client(SESSION_NAME, API_ID, API_HASH)
 
 SUDOERS = filters.user()
 
