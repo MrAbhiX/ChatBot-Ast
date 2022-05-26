@@ -39,11 +39,11 @@ SUDOERS = filters.user()
 if USERBOT_ID not in SUDOERS:
     SUDOERS.add(USERBOT_ID)
     
-async def main():
+async def main(delay=6):
         global arq
         session = aiohttp.ClientSession()
         arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
-        session.close()
+        await session.close()
      
 loop = get_event_loop()
 loop.run_until_complete(main())        
