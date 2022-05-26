@@ -1,6 +1,6 @@
 from asyncio import gather, sleep, get_event_loop
 import aiohttp
-from pyrogram import filters
+from pyrogram import filters, Client as bot
 from pyrogram.types import Message
 from Python_ARQ import ARQ
 from ChatBot.Database import (
@@ -41,7 +41,7 @@ async def eor(msg: Message, **kwargs):
 
 
 
-@abhi.on_message(
+@bot.on_message(
     filters.command("chatbot", prefixes=USERBOT_PREFIX)
     & ~filters.edited
     & filters.user
