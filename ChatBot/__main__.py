@@ -4,6 +4,8 @@ from Python_ARQ import ARQ
 from os import environ
 from inspect import getfullargspec
 import asyncio
+from pyrogram.types import Message
+
 
 API_ID = int(environ.get("API_ID", 6))
 API_HASH = environ.get("API_HASH", "eb06d4abfb49dc3eeb1aeb98ae0f581e")
