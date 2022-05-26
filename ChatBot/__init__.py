@@ -1,7 +1,7 @@
 from ChatBot.main import (abhi, 
                           API_ID,
                           API_HASH,
-                          SESSION_STRING,
+                          SESSION_NAME,
                           ARQ_API_URL,
                           ARQ_API_KEY,
                           USERBOT_PREFIX,
