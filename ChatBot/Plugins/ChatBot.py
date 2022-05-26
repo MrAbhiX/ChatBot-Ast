@@ -53,7 +53,7 @@ async def chatbot_status_ubot(_, message: Message):
     await chat_bot_toggle(message, is_userbot=True)
 
 
-@abhi.on_message(
+@bot.on_message(
     ~filters.me & ~filters.private & filters.text & ~filters.edited,
     group=chatbot_group,
 )
@@ -77,7 +77,7 @@ async def chatbot_talk_ubot(_, message: Message):
     await type_and_send(message)
 
 
-@abhi.on_message(
+@bot.on_message(
     filters.text & filters.private & ~filters.me & ~filters.edited,
     group=(chatbot_group + 1),
 )
