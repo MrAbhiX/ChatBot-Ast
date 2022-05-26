@@ -1,5 +1,5 @@
 from asyncio import gather, sleep
-
+import aiohttp
 from pyrogram import filters
 from pyrogram.types import Message
 
@@ -24,7 +24,8 @@ from ChatBot.main import arq
 from ChatBot.Database.Mongo import db
 from ChatBot.Database.functions import chatbotdb
 
-
+session = aiohttp.ClientSession()
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
 
 async def eor(msg: Message, **kwargs):
     func = (
