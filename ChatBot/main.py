@@ -39,10 +39,16 @@ SUDOERS = filters.user()
 if USERBOT_ID not in SUDOERS:
     SUDOERS.add(USERBOT_ID)
     
-session = aiohttp.ClientSession()
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
-session.close()
-
+async def main():
+        global arq
+        session = aiohttp.ClientSession()
+        arq = ARQ(ARQ_API_BASE_URL, ARQ_API_KEY, session)
+       
+     session.close()
+loop = get_event_loop()
+    loop.run_until_complete(main())        
+ 
+        
 async def eor(msg: Message, **kwargs):
     func = (
         (msg.edit_text if msg.from_user.is_self else msg.reply)
