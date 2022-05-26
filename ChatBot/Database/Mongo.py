@@ -8,4 +8,4 @@ class Database:
         self.db = self._client[database_name]
         self.col = self.db.users
 
- 
+ db = Database(MONGO_URL)
