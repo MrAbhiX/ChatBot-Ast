@@ -1,4 +1,4 @@
-from ChatBot import db
+from .Mongo import db
 
 chatbotdb = db.chatbot
 
