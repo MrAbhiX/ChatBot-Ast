@@ -1,6 +1,6 @@
+from ChatBot import db
 
-from ChatBot import chatbotdb
-
+chatbotdb = chatbot.db
 
 async def check_chatbot():
     return (
