@@ -28,7 +28,8 @@ async def main():
     global arq
     session = aiohttp.ClientSession()
     arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
-
+    return arq
+    
 async def eor(msg: Message, **kwargs):
     func = (
         (msg.edit_text if msg.from_user.is_self else msg.reply)
@@ -87,7 +88,3 @@ async def chatbot_talk_ubot_pm(_, message: Message):
         return
     await type_and_send(message)
 
-loop = get_event_loop()
-loop.run_until_complete(main())
-    
-  
