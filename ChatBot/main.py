@@ -41,7 +41,6 @@ if USERBOT_ID not in SUDOERS:
     
 session = aiohttp.ClientSession()
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
-
 session.close()
 
 async def eor(msg: Message, **kwargs):
