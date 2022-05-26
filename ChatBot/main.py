@@ -17,7 +17,7 @@ ARQ_API_KEY = environ.get("ARQ_API_KEY", None)
 
 abhi = Client("ChatBOt Assistant", SESSION_NAME, API_ID, API_HASH)
 
-SUDOERS = filters.user()
+
 
 with abhi as app:
     lakshu = app.get_me()
@@ -27,6 +27,8 @@ USERBOT_NAME = lakshu.first_name + (lakshu.last_name or "")
 USERBOT_USERNAME = lakshu.username
 USERBOT_MENTION = lakshu.mention
 USERBOT_DC_ID = lakshu.dc_id
+SUDOERS = filters.user()
+
 
 if USERBOT_ID not in SUDOERS:
     SUDOERS.add(USERBOT_ID)
