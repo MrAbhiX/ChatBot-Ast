@@ -26,7 +26,7 @@ def split_limits(text):
     return result
 
 
-def capture_err(func):
+def capture_error(func):
     @wraps(func)
     async def capture(client, message, *args, **kwargs):
         try:
