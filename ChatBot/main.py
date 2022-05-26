@@ -57,6 +57,7 @@ async def main():
     arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
 
     await abhi.start()
+    await abhi.send_message(LOG_GROUP_ID, "I'm ChatBot Message Me For Chat With Me")
     print(
         """
 -----------------
