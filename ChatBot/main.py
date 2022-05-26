@@ -3,7 +3,7 @@ import aiohttp
 from Python_ARQ import ARQ
 from os import environ
 from inspect import getfullargspec
-import asyncio
+from asyncio import get_event_loop
 from pyrogram.types import Message
 
 LOG_GROUP_ID = int(environ.get("LOG_GROUP_ID", None))
@@ -46,7 +46,7 @@ async def main():
        
      session.close()
 loop = get_event_loop()
-    loop.run_until_complete(main())        
+loop.run_until_complete(main())        
  
         
 async def eor(msg: Message, **kwargs):
