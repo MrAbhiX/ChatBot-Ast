@@ -1,4 +1,4 @@
-from ChatBot import MONGO_URL
+from ChatBot import MONGO_URL, USERBOT_USERNAME
 from motor.motor_asyncio import AsyncIOMotorClient
 
 
@@ -8,4 +8,4 @@ class Database:
         self.db = self._client[database_name]
         self.col = self.db.users
 
- db = Database(MONGO_URL)
+ db = Database(MONGO_URL, USERBOT_USERNAME)
