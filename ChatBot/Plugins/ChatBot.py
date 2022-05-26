@@ -1,4 +1,4 @@
-from asyncio import gather, sleep
+from asyncio import gather, sleep, get_event_loop
 import aiohttp
 from pyrogram import filters
 from pyrogram.types import Message
@@ -24,8 +24,10 @@ from inspect import getfullargspec
 from ChatBot.Database.Mongo import db
 from ChatBot.Database.functions import chatbotdb
 
-session = aiohttp.ClientSession()
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
+async def main():
+    global arq
+    session = aiohttp.ClientSession()
+    arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
 
 async def eor(msg: Message, **kwargs):
     func = (
@@ -84,3 +86,8 @@ async def chatbot_talk_ubot_pm(_, message: Message):
     if message.chat.id not in db["userbot"]:
         return
     await type_and_send(message)
+
+loop = get_event_loop()
+loop.run_until_complete(main())
+    
+  
