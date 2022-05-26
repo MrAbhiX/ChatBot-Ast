@@ -21,7 +21,7 @@ from ChatBot.Database import (db,
                               add_chatbot, 
                               rm_chatbot,
                               chatbot_group,
-                              chatbotdb
+                              
                               )
 
 from ChatBot.Helpers import (capture_error,
