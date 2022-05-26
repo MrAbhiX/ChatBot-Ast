@@ -20,7 +20,7 @@ from ChatBot.main import (abhi,
                   
 from inspect import getfullargspec    
                           
-from ChatBot.main import arq
+
 from ChatBot.Database.Mongo import db
 from ChatBot.Database.functions import chatbotdb
 
