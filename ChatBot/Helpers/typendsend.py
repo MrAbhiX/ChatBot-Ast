@@ -3,7 +3,7 @@ from asyncio import gather, sleep
 
 
 async def lxme(query: str, user_id: int):
-    lxmi = await arq.luna(query, user_id)
+    lxmi = await arq.lxmi(query, user_id)
     return lxmi.result
 
 
