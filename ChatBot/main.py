@@ -43,7 +43,11 @@ async def main(delay=6):
         global arq
         session = aiohttp.ClientSession()
         arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
-        await session.close()
+        
+    
+        await asyncio.sleep(delay)
+        
+        
      
 loop = get_event_loop()
 loop.run_until_complete(main())        
