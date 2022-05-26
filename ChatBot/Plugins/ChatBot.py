@@ -17,10 +17,7 @@ from ChatBot.main import (abhi,
                           USERBOT_PREFIX,
                           USERBOT_ID,
                           USERBOT_USERNAME,
-                          LOG_GROUP_ID,
-                          USERBOT_DC_ID,
-                          USERBOT_MENTION,
-                          USERBOT_NAME,
+                          
                           eor,
                           arq)
 
