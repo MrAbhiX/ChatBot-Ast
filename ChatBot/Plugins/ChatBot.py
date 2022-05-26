@@ -25,7 +25,7 @@ from ChatBot.Database.Mongo import db
 from ChatBot.Database.functions import chatbotdb
 
 async def main():
-    global arq
+    
     session = aiohttp.ClientSession()
     arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
     return arq
