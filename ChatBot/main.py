@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from aiohttp import ClientSession
+import aiohttp
 from Python_ARQ import ARQ
 from os import environ
 from inspect import getfullargspec
@@ -39,9 +39,10 @@ SUDOERS = filters.user()
 if USERBOT_ID not in SUDOERS:
     SUDOERS.add(USERBOT_ID)
     
-aiohttpsession = ClientSession()
+session = aiohttp.ClientSession()
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
 
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+session.close()
 
 async def eor(msg: Message, **kwargs):
     func = (
