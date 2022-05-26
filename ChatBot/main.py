@@ -54,7 +54,7 @@ async def eor(msg: Message, **kwargs):
 async def main():
     global arq
     session = aiohttp.ClientSession()
-    arq = ARQ(ARQ_API_BASE_URL, ARQ_API_KEY, session)
+    arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)
 
     await abhi.start()
     print(
