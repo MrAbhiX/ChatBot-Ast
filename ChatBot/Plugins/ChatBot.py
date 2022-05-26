@@ -13,16 +13,29 @@ from ChatBot.Helpers import (capture_error,
                              type_and_send)
 
 from ChatBot.main import (abhi, 
-                          
+                          arq,
                           USERBOT_PREFIX,
                           USERBOT_ID,
-                          USERBOT_USERNAME,
+                          USERBOT_USERNAME)
+                  
+from inspect import getfullargspec    
                           
-                          eor,
-                          arq)
 
 from ChatBot.Database.Mongo import db
 from ChatBot.Database.functions import chatbotdb
+
+
+
+async def eor(msg: Message, **kwargs):
+    func = (
+        (msg.edit_text if msg.from_user.is_self else msg.reply)
+        if msg.from_user
+        else msg.reply
+    )
+    spec = getfullargspec(func.__wrapped__).args
+    return await func(**{k: v for k, v in kwargs.items() if k in spec})
+
+
 
 @abhi.on_message(
     filters.command("chatbot", prefixes=USERBOT_PREFIX)
