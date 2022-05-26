@@ -3,8 +3,20 @@ from asyncio import gather, sleep
 from pyrogram import filters
 from pyrogram.types import Message
 
-from ChatBot import *
+from ChatBot import (capture_error,
+                     chat_bot_toggle,
+                     type_and_send,
+                     check_chatbot, 
+                     SUDOERS,
+                     add_chatbot, 
+                     eor,
+                     rm_chatbot,
+                     arq,
+                     chatbot_group,
+                     abhi)
 
+from ChatBot.Database.Mongo import db
+from ChatBot.Database.functions import chatbotdb
 
 @abhi.on_message(
     filters.command("chatbot", prefixes=USERBOT_PREFIX)
