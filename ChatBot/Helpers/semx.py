@@ -1,5 +1,5 @@
 from pyrogram.types import Message
-from .functions import *
+from ChatBot.Database.functions import *
 
 async def chat_bot_toggle(message: Message, is_userbot: bool):
     status = message.text.split(None, 1)[1].lower()
