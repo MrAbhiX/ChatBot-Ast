@@ -1,1 +1,1 @@
-from ChatBot.Helpers import capture_error
+from .errors import capture_error
