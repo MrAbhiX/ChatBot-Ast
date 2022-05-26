@@ -14,7 +14,7 @@ USERBOT_PREFIX = environ.get("USERBOT_PREFIX", ".")
 MONGO_URL = environ.get("MONGO_URL", None)
 ARQ_API_URL = environ.get("ARQ_API_URL", None)
 ARQ_API_KEY = environ.get("ARQ_API_KEY", None)
-USERBOT_ID = int(getenv("USERBOT_ID", "")
+USERBOT_ID = int(getenv("USERBOT_ID", ""))
 USERBOT_USERNAME = getenv("USERBOT_USERNAME", "")
 
 abhi = Client(
