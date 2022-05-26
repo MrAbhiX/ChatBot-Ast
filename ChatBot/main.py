@@ -1,7 +1,7 @@
 from pyrogram import Client, filters, idle
 import aiohttp
 from Python_ARQ import ARQ
-from os import environ
+from os import environ, getenv
 from inspect import getfullargspec
 from asyncio import get_event_loop
 from pyrogram.types import Message
@@ -14,7 +14,8 @@ USERBOT_PREFIX = environ.get("USERBOT_PREFIX", ".")
 MONGO_URL = environ.get("MONGO_URL", None)
 ARQ_API_URL = environ.get("ARQ_API_URL", None)
 ARQ_API_KEY = environ.get("ARQ_API_KEY", None)
-
+USERBOT_ID = int(getenv("USERBOT_ID", "")
+USERBOT_USERNAME = getenv("USERBOT_USERNAME", "")
 
 abhi = Client(
     api_id=API_ID,
