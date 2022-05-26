@@ -27,7 +27,7 @@ abhi = Client(
 
 
 with abhi as app:
-    lakshu = app.get_me()
+    lakshu = abhi.get_me()
 
 USERBOT_ID = lakshu.id
 USERBOT_NAME = lakshu.first_name + (lakshu.last_name or "")
