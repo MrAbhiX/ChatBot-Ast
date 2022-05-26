@@ -18,7 +18,7 @@ ARQ_API_KEY = environ.get("ARQ_API_KEY", None)
 abhi = Client("ChatBot Assistant",
     api_id=API_ID,
     api_hash=API_HASH,
-    SESSION_NAME,
+    SESSION_NAME
     
     )
 
