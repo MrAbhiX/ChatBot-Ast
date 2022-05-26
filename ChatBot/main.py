@@ -1,4 +1,4 @@
-from pyrogram import Client, filters
+from pyrogram import Client, filters, idle
 import aiohttp
 from Python_ARQ import ARQ
 from os import environ
@@ -40,14 +40,6 @@ if USERBOT_ID not in SUDOERS:
     SUDOERS.add(USERBOT_ID)
     
 
-async def main():
-    global arq
-    session = aiohttp.ClientSession()
-    arq = ARQ(ARQ_API_URL, ARQ_API_KEY, session)        
-     
-loop = get_event_loop()
-loop.run_until_complete(main())        
- 
         
 async def eor(msg: Message, **kwargs):
     func = (
@@ -58,5 +50,22 @@ async def eor(msg: Message, **kwargs):
     spec = getfullargspec(func.__wrapped__).args
     return await func(**{k: v for k, v in kwargs.items() if k in spec})
 
-print("ChatBot Assistant Started By Abhi")
-abhi.start()
+
+async def main():
+    global arq
+    session = ClientSession()
+    arq = ARQ(ARQ_API_BASE_URL, ARQ_API_KEY, session)
+
+    await abhi.start()
+    print(
+        """
+-----------------
+| ChatBot Assistant Started Made By Abhi! |
+-----------------
+"""
+    )
+    await idle()
+
+
+loop = get_event_loop()
+loop.run_until_complete(main())
