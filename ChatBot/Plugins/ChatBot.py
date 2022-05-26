@@ -13,7 +13,7 @@ from ChatBot.Helpers import (capture_error,
                              type_and_send)
 
 from ChatBot.main import (abhi, 
-                          SUDOERS,
+                          
                           USERBOT_PREFIX,
                           USERBOT_ID,
                           USERBOT_USERNAME,
@@ -30,7 +30,7 @@ from ChatBot.Database.functions import chatbotdb
 @abhi.on_message(
     filters.command("chatbot", prefixes=USERBOT_PREFIX)
     & ~filters.edited
-    & SUDOERS
+    & filters.user
 )
 @capture_error
 async def chatbot_status_ubot(_, message: Message):
